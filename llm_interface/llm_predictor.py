@@ -22,9 +22,14 @@ def generate_prompt(prompt_template, commit_info, diff):
 
 
 def query_llm(prompt):
+    # INTEGRATE MODEL HERE (https://github.com/ollama/ollama) [Code Llama, Llama 3.1-8B, Llama 3.2, DeepSeek-R1, Mistral]
+    # FOR OPENAI
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
         temperature=0
     )
-    return response.choices[0].message.content.strip()
+    parsed_response = response.choices[0].message.content.strip()
+    # Refer: https://youtu.be/d0o89z134CQ?si=3CNhQxTJJI_sc8Qp
+    # TODO
+    return parsed_response
