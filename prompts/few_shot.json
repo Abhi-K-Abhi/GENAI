@@ -1,0 +1,55 @@
+{
+"instructions": "You are a commit risk analysis assistant.\nYour job is to analyze a commit information and diff and determine if it introduces a software bug.\nRespond only with 0 (clean) or 1 (risky). Do not include explanations.",
+    "examples": [
+    {
+        "commit_info": "Title: Fix API version in pom.xml  Change-Id: Id96d71ccb150c18a15291c01296a8152c6ec3eb0",
+        "diff": "diff --git a/pom.xml b/pom.xml\nindex d33e954..ddd1e98 100644\n--- a/pom.xml\n+++ b/pom.xml\n@@ -22,7 +22,7 @@ limitations under the License.\n   <groupId>com.googlesource.gerrit.plugins</groupId>\n   <artifactId>delete-project</artifactId>\n   <packaging>jar</packaging>\n-  <version>2.12-SNAPSHOT</version>\n+  <version>2.12</version>",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: cmd/coordinator: use new gceutil import path",
+        "diff": "diff --git a/cmd/coordinator/kube.go b/cmd/coordinator/kube.go\nindex 2e0b661d..821e4b22 100644\n--- a/cmd/coordinator/kube.go\n+++ b/cmd/coordinator/kube.go\n@@ -19,7 +19,7 @@ import (\n\t\"sync\"\n\t\"time\"\n\n-\t\"go4.org/cloud/gceutil\"\n+\t\"go4.org/cloud/google/gceutil\"",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: Fix API version in pom.xml  Change-Id: Id96d71ccb150c18a15291c01296a8152c6ec3eb0",
+        "diff": "diff --git a/pom.xml b/pom.xml\n--- a/pom.xml\n+++ b/pom.xml\n@@ -22,7 +22,7 @@\n-  <version>2.12-SNAPSHOT</version>\n+  <version>2.12</version>",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: Remove Maven build  Change-Id: Ib284a9fb8e1b6cf5d21bd4e5c6065ad141764c4a",
+        "diff": "diff --git a/pom.xml b/pom.xml\n--- a/pom.xml\n+++ /dev/null\n@@ -1,86 +0,0 @@",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: cmd/coordinator: use new gceutil import path",
+        "diff": "diff --git a/cmd/coordinator/kube.go b/cmd/coordinator/kube.go\n--- a/kube.go\n+++ b/kube.go\n@@ -19,7 +19,7 @@\n- \"go4.org/cloud/gceutil\"\n+ \"go4.org/cloud/google/gceutil\"",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: maintain a separate list of sub-repo trybots",
+        "diff": "diff --git a/cmd/coordinator/coordinator.go b/coordinator.go\n@@ +var tryBuilders []dashboard.BuildConfig\n+var subTryBuilders []dashboard.BuildConfig",
+        "label": 1
+    },
+    {
+        "commit_info": "Title: Bug 424725 - Java Builder infinite loop fix",
+        "diff": "diff --git a/Statement.java b/Statement.java\n@@ +if (compilerOptions.sourceLevel >= JDK1_7 && methodBinding.isPolymorphic()) return;",
+        "label": 1
+    },
+    {
+        "commit_info": "Title: Fix issue with flake8 check and full paths",
+        "diff": "diff --git a/checks.py b/checks.py\n@@ -32,7 +32,7 @@\n- UNDERSCORE_IMPORT_FILES = ['./cinder/objects/__init__.py']\n+ UNDERSCORE_IMPORT_FILES = ['cinder/objects/__init__.py']",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: Remove redundant type arguments",
+        "diff": "diff --git a/AntProcessDebugBuildLogger.java b/AntProcessDebugBuildLogger.java\n@@ -236,7 +236,7 @@\n- fBreakpoints = new ArrayList<IBreakpoint>();\n+ fBreakpoints = new ArrayList<>();",
+        "label": 0
+    },
+    {
+        "commit_info": "Title: Fix single character string constants in dumpcpp",
+        "diff": "diff --git a/main.cpp b/main.cpp\n@@ -87,7 +87,7 @@\n- out << \",\";\n+ out << ',';",
+        "label": 1
+    }
+  ]
+}

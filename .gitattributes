@@ -1,0 +1,10 @@
+*.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_*.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_go.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_qt.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_platform.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_openstack.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_gerrit.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_jdt.txt filter=lfs diff=lfs merge=lfs -text
+data/train_openllama_go.TXT filter=lfs diff=lfs merge=lfs -text
+data/*.txt filter=lfs diff=lfs merge=lfs -text
