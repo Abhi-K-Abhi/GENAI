@@ -1,0 +1,18 @@
+{
+    "instructions": "You are a commit risk analysis assistant. Your job is to analyze a commit step-by-step and decide whether it is risky or clean.",
+    "examples": [
+      {
+        "commit_info": "Title: Fix potential null pointer in user creation",
+        "diff": "--- a/UserService.java\n+++ b/UserService.java\n@@ -45,6 +45,9 @@\n+if (user == null) {\n+  return;\n+}",
+        "reasoning": "This commit adds a null check for 'user'. Preventing a null pointer exception is safe and prevents a crash.",
+        "label": "0"
+      },
+      {
+        "commit_info": "Title: Skip auth check during debug",
+        "diff": "--- a/AuthManager.js\n+++ b/AuthManager.js\n@@ -18,7 +18,9 @@\n-if (!user.isAdmin) {\n-  throw 'Unauthorized';\n-}\n+// Skipped auth for debugging",
+        "reasoning": "Removing an auth check, even temporarily, could introduce a serious security flaw.",
+        "label": "1"
+      }
+    ]
+}
+  

@@ -25,6 +25,3 @@ commit-risk-predictor/               <-- 🗂️ Main Project Folder
 └── README.md                        <-- 📄 File (Project overview/documentation)
 
 -------------------------------------------------------------------------------------------------------
-
-API KAY(openAI):
-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
