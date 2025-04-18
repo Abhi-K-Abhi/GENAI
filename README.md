@@ -1,27 +1,73 @@
-Folder Structure.
-
-commit-risk-predictor/               <-- 🗂️ Main Project Folder
-│
-├── data/                            <-- 🗂️ Folder (for your datasets)
-│
-├── prompts/                         <-- 🗂️ Folder (for storing prompt templates)
-│   └── few_shot_example.json        <-- 📄 File (JSON prompt template)
-│
-├── models/                          <-- 🗂️ Folder (for ML model training code)
-│   └── train_ml_model.py            <-- 📄 File (Python script to train ML models)
-│
-├── llm_interface/                   <-- 🗂️ Folder (for LLM-related code)
-│   ├── prompt_engineer.py           <-- 📄 File (optional helper for prompt crafting)
-│   └── llm_predictor.py             <-- 📄 File (sends prompt + gets LLM prediction)
-│
-├── ensemble/                        <-- 🗂️ Folder (for hybrid ensemble logic)
-│   └── hybrid_predictor.py          <-- 📄 File (combines ML + LLM outputs)
-│
-├── utils/                           <-- 🗂️ Folder (for helper functions/utilities)
-│   └── data_loader.py               <-- 📄 File (loads + preprocesses dataset)
-│
-├── main.py                          <-- 📄 File (entry point to run everything)
-├── requirements.txt                 <-- 📄 File (Python libraries to install)
-└── README.md                        <-- 📄 File (Project overview/documentation)
-
--------------------------------------------------------------------------------------------------------
+GENAI/
+├── config/                         # Configuration files (YAML/JSON/INI)
+├── data/                           # Input datasets or raw data
+├── models/                         # Model architectures and scripts
+│   ├── codebart/
+│   ├── codellama/
+│   ├── common/
+│   ├── deepseek/
+│   │   ├── __init__.py
+│   │   ├── fewshot_gerrit.py
+│   │   ├── fewshot_go.py
+│   │   ├── fewshot_jdt.py
+│   │   ├── fewshot_openstack.py
+│   │   ├── fewshot_platform.py
+│   │   ├── fewshot_qt.py
+│   │   ├── predictor.py
+│   │   ├── prompt_template.txt
+│   │   ├── run_gerrit.py
+│   │   ├── run_go.py
+│   │   ├── run_jdt.py
+│   │   ├── run_openstack.py
+│   │   ├── run_platform.py
+│   │   └── run_qt.py
+│   ├── llama3/
+│   │   ├── __init__.py
+│   │   ├── fewshot_gerrit.py
+│   │   ├── fewshot_go.py
+│   │   ├── fewshot_jdt.py
+│   │   ├── fewshot_openstack.py
+│   │   ├── fewshot_platform.py
+│   │   ├── fewshot_qt.py
+│   │   ├── predictor.py
+│   │   ├── prompt_template.txt
+│   │   ├── run_gerrit.py
+│   │   ├── run_go.py
+│   │   ├── run_jdt.py
+│   │   ├── run_openstack.py
+│   │   ├── run_platform.py
+│   │   └── run_qt.py
+│   ├── mistral/
+│   │   ├── __init__.py
+│   │   ├── fewshot_gerrit.py
+│   │   ├── fewshot_go.py
+│   │   ├── fewshot_jdt.py
+│   │   ├── fewshot_openstack.py
+│   │   ├── fewshot_platform.py
+│   │   ├── fewshot_qt.py
+│   │   ├── predictor.py
+│   │   ├── prompt_template.txt
+│   │   ├── run_gerrit.py
+│   │   ├── run_go.py
+│   │   ├── run_jdt.py
+│   │   ├── run_openstack.py
+│   │   ├── run_platform.py
+│   │   └── run_qt.py
+│   ├── ollama/
+│   └── openai/
+│       └── __init__.py
+├── outputs/                        # Generated outputs or model predictions
+├── prompts/                        # Prompt JSON configurations
+│   ├── CoT.json
+│   └── few_shot.json
+├── test/                           # Unit tests and test cases
+├── utils/                          # Helper scripts and utility functions
+│   ├── dataset_loader.py
+│   ├── evaluation.py
+│   └── prompt_utils.py
+├── .env                            # Environment variables (should be in .gitignore)
+├── .gitignore                      # Specifies untracked files
+├── .gitattributes                  # Git configuration attributes
+├── main.py                         # Main entry point
+├── README.md                       # Project documentation
+└── requirements.txt                # Dependency list
